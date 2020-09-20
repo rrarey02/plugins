@@ -50,7 +50,7 @@ class AndroidWebView implements WebViewPlatform {
         // WebView content is not affected by the Android view's layout direction,
         // we explicitly set it here so that the widget doesn't require an ambient
         // directionality.
-        layoutDirection: TextDirection.rtl,
+        layoutDirection: TextDirection.ltr,
         creationParams:
             MethodChannelWebViewPlatform.creationParamsToMap(creationParams),
         creationParamsCodec: const StandardMessageCodec(),
