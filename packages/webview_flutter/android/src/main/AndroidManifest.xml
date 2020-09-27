@@ -1,2 +1,9 @@
-<manifest package="io.flutter.plugins.webviewflutter">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  package="io.flutter.plugins.webviewflutter">
+  <application>
+    <!-- Hybrid composition -->
+    <meta-data
+      android:name="io.flutter.embedded_views_preview"
+      android:value="true"/>
+  </application>
 </manifest>

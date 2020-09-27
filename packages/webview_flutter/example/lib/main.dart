@@ -50,6 +50,7 @@ class _WebViewExampleState extends State<WebViewExample> {
       // to allow calling Scaffold.of(context) so we can show a snackbar.
       body: Builder(builder: (BuildContext context) {
         return WebView(
+          debuggingEnabled: true,
           initialUrl: 'https://flutter.dev',
           javascriptMode: JavascriptMode.unrestricted,
           onWebViewCreated: (WebViewController webViewController) {
@@ -92,6 +93,16 @@ class _WebViewExampleState extends State<WebViewExample> {
   }
 
   Widget favoriteButton() {
+    return FloatingActionButton(
+      onPressed: () async {
+        Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) {
+            return WebViewExample();
+          },
+        ));
+      },
+      child: const Icon(Icons.favorite),
+    );
     return FutureBuilder<WebViewController>(
         future: _controller.future,
         builder: (BuildContext context,
